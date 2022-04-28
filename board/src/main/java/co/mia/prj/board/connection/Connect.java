@@ -11,12 +11,11 @@ import co.mia.prj.board.post.PostManagerBase;
 public class Connect {
 	private LogInManager lm;
 	private LogInfo inPerson; // 로그인한 사람
-	private PostManagerBase posts;
+	private PostManagerBase posts = new PostArray();
 	private Scanner scn = new Scanner(System.in);
 	private boolean runCheck = true;
 
 	public void Run() {
-
 		while (runCheck) {
 			logInRun(); // 이걸 거쳤다는건 로그인을 했다는거
 			postRun();
@@ -36,7 +35,6 @@ public class Connect {
 	}
 
 	public void postRun() {
-		posts = new PostArray();
 		posts.logInfoSet(inPerson); // 로그인 정보 삽입
 		int menu = 0;
 		while (true) {

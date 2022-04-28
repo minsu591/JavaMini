@@ -1,12 +1,13 @@
 package co.mia.prj.board.post;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 public class Post {
 	private String writer;
 	private Timestamp writeDate;
 	private String title;
-	private String content;
+	private List<String> content;
 	private int postNo;
 	
 	public int getPostNo() {
@@ -23,7 +24,7 @@ public class Post {
 	}
 	
 	
-	public Post(String writer, Timestamp writeDate, String title, String content, int postNo) {
+	public Post(String writer, Timestamp writeDate, String title, List<String> content, int postNo) {
 		super();
 		this.writer = writer;
 		this.writeDate = writeDate;
@@ -47,10 +48,10 @@ public class Post {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getContent() {
+	public List<String> getContent() {
 		return content;
 	}
-	public void setContent(String content) {
+	public void setContent(List<String> content) {
 		this.content = content;
 	}
 	
