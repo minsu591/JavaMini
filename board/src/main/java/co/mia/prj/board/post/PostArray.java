@@ -1,5 +1,6 @@
 package co.mia.prj.board.post;
 
+import java.sql.Timestamp;
 import java.util.Scanner;
 
 import co.mia.prj.board.log.LogInfo;
@@ -23,13 +24,17 @@ public class PostArray implements PostManagerBase { // 게시글 관리를 Array
 	}
 
 	public Post changeBoard(String word) {
+		//오늘 날짜 설정
+		Timestamp ts = new Timestamp(System.currentTimeMillis());
+
+		
 		System.out.println("[게시글 " + word + "]");
 		System.out.print(word + "할 게시글의 제목을 입력해주세요 >>> ");
 		String title = scn.next();
 		System.out.print(word + "할 게시글의 내용을 입력해주세요 >>> ");
 		String content = scn.next();
 		if (inPerson != null) {
-			post = new Post(inPerson.getId(), "DATE", title, content, -1);
+			post = new Post(inPerson.getId(), ts, title, content, -1);
 			return post;
 		}
 		return null;
@@ -37,7 +42,7 @@ public class PostArray implements PostManagerBase { // 게시글 관리를 Array
 	}
 
 	@Override
-	public void LogInfoSet(LogInfo newLog) { // 로그인 아이디를 클래스 내로 가져오기
+	public void logInfoSet(LogInfo newLog) { // 로그인 아이디를 클래스 내로 가져오기
 		if (inPerson != null) {
 			inPerson.setId(newLog.getId());
 			inPerson.setPassword(newLog.getPassword());

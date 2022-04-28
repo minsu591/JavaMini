@@ -2,6 +2,7 @@ package co.mia.prj.board.log;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class LogInManager {
@@ -14,9 +15,11 @@ public class LogInManager {
 	public LogInfo login() {
 		//test id
 		logmanager.add(new LogInfo("hr", "hr"));
+		logmanager.add(new LogInfo("mm","mm"));
 
 		System.out.print("로그인 할 아이디를 입력해주세요 >>> ");
 		String id = scn.next();
+		
 		System.out.print("로그인 할 비밀번호를 입력해주세요 >>> ");
 		String passwd = scn.next();
 		newLog = new LogInfo(id, passwd);
