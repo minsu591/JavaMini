@@ -2,7 +2,6 @@ package co.mia.prj.board.log;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class LogInManager {

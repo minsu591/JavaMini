@@ -69,6 +69,7 @@ public class Connect {
 			} else if (menu == 7) {
 				System.out.println("시스템을 종료합니다.");
 				runCheck = false;
+				scn.close();
 				break;
 			} else {
 				System.out.println("잘못된 입력입니다. 다시 시도해주세요.");
